@@ -4,7 +4,7 @@ int main()
 {
     printf("Enter the value of n : ");
     long long n, currentPalindromeNo = 1;
-    scanf("%d", &n);
+    scanf("%lld", &n);
     long long currentlyConsidering = 1;
     while (currentPalindromeNo != n)
     {
