@@ -9,7 +9,7 @@ int main()
     while (currentPalindromeNo != n)
     {
         long long workingWith = currentlyConsidering;
-        int reversed = 0;
+        long long reversed = 0;
         while (workingWith != 0)
         {
             reversed = reversed * 10;
