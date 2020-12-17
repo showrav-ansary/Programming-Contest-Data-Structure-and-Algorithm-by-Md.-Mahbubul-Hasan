@@ -1,5 +1,3 @@
 .vscode/launch.json
 .vscode/tasks.json
-.idea/vcs.xml
-.idea/Problem-Solving.iml
-.idea/modules.xml
+Codeforce/*
