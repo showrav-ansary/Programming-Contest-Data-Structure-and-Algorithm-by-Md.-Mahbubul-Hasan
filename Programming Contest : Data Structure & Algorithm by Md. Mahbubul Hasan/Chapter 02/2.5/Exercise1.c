@@ -2,7 +2,7 @@
 
 int main()
 {
-    int a[10], n, i;
+    int a[31], n, i;
     printf("Enter the decimal number: ");
     scanf("%d", &n);
     for (i = 0; n > 0; i++)
