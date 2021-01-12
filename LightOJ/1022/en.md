@@ -4,11 +4,8 @@ Input starts with an integer *T* (≤ 1000), denoting the number of test cases.
 Each case contains a floating point number *r* `(0 < r ≤ 1000)` denoting the radius of the circle. And you can assume that *r* contains at most four digits after the decimal point.
 For each case, print the case number and the shaded area rounded to two places after the decimal point.
 
-<p align="center">
+![Solution](1022.png)
 
-<img src = "1022.png">
-
-</p>
 We know that the `area of a square = (length of any side)²` and the `area of a circle = π*(radius)²`. Here the `length of any side of the square = 2*radius of the circle`. We can easily calculate the `area of the blue part` 
 
 ```
