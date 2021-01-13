@@ -13,7 +13,7 @@ This is just a simple implementation problem. First we have to determine wether 
 
  `(2) If multiple solutions exist that satisfy (1), M must be as small as possible`.
 
- Focusing on `Condition 2`, the equation can be solved as `(N/a)*(M*a) = W` where to make `a` as big as possible so that `M` becomes smaller as well as `(N/a)` becomes an `odd` number. To solve it, we will assign `N = N/2` until it is an `odd` number and we will assign `M *= 2` upto how many times `N` can be divided until is an `odd` number.
+ Focusing on `Condition 2`, the equation can be solved as `(N/a)*(M*a) = W` where to make `a` as big as possible so that `M` becomes smaller as well as `(N/a)` becomes an `odd` number. To solve it, we will keep assigning `N = N/2` until it is an `odd` number and we will be also assigning `M *= 2` upto how many times `N` can be divided until is an `odd` number.
 
  The above implementation is `accepted`.  
 
