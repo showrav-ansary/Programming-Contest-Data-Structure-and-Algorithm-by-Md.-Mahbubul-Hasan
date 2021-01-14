@@ -3,7 +3,7 @@
 ![Cover](Cover.png)
 
 
-This repo contains solutions to the problems and exercises provided in __প্রোগ্রামিং কন্টেস্ট : ডেটা স্ট্রাকচার ও অ্যালগরিদম__ by __মোঃ মাহবুবুল হাসান__. You are highly discouraged to look through the solutions without trying out a problem by yourself first.
+This repo contains solutions to the problems and exercises provided in __প্রোগ্রামিং কন্টেস্ট : ডেটা স্ট্রাকচার ও অ্যালগরিদম__ by __মোঃ মাহবুবুল হাসান__ (2016). You are highly discouraged to look through the solutions without trying out a problem by yourself first.
 
 You are requested to create an `issue` if you find any solution not well explained or wrong. You are expected to be language agnostic about the solutions though it will heavily be written in `C` or `C++` depending on when I wrote the solution and what was more convinient for me. You are requested to focus on explaining as much as possible.  
 
