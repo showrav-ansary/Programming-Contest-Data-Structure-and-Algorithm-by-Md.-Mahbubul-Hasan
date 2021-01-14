@@ -17,7 +17,7 @@ and also
 ```
 lower left y-coordinate < cow's y-cordinate < upper right y-coordinate
 ```
-If any of the above mentioned conditions is not met, the cow can be said to not be within the field. For example : I & E has the same y-coordinate as G while F & H has the same x-coordinate as G, yet none of them are in the field.
+If any of the above mentioned conditions is not met, the cow can be said to not be within boundaries of the field. For example : I & E has the same y-coordinate as G as well as F & H has the same x-coordinate as G, yet none of them are in the field except G.
 
 The above implementation is `accepted`.
 
@@ -42,7 +42,7 @@ int main()
         {
             scanf("%d", &x);
             scanf("%d", &y);
-            if (x >= x1 && x <= x2 && y >= y1 && y <= y2)
+            if (x > x1 && x < x2 && y > y1 && y < y2)
                 printf("Yes\n");
             else
                 printf("No\n");
