@@ -1,3 +1,5 @@
+Written by: [Rahat Hossain](https://github.com/rahathossain690)
+
 # LOJ 1136 - Division by 3
 
 ## Problem
