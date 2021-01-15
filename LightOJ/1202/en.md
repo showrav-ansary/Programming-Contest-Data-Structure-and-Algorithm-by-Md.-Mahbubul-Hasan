@@ -17,7 +17,7 @@ For each case, print the case number and the minimum moves required to take one 
 
 ## Solution ##
 
-![solution](1202.png)
+<img src = "1202.png" width="400"></img>
 
 In the figure above `purple` denotes initial position, `green` denotes a position that can be obtained in _1 move_, `blue` denotes a posiiton that can be obtained in _2 moves_ and `red` denotes a position that is not of the same color as its initial block, simply `impossible` to be obtained.
 
