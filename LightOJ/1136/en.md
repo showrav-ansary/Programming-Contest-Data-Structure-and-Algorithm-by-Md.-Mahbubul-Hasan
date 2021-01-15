@@ -85,18 +85,22 @@ Now, finding out how many numbers are divisible by 3 from 1 to **n** is quite eq
 3. If n % 3 = 2 then exactly floor(n / 3) + 1 integers are not divisible by 3.
 So now we will get how many numbers are divisible by 3 by simply substracting the result found above from the number **n**.
 
-c++ function to calculate this is going to be (Beware of n = 1 case also)...
+c function to calculate this is going to be (Beware of n = 1 case also)...
 ```
-long long numbers_divisible_by_3_from_1_to_n (int n){
-  if(n == 0) return 0;  // Caution: we will also call numbers_divisible_by_3_from_1_to_n(A - 1). If A = 1 then the argument becomes -1 which can result in     
-                        // calculation.
-  int subs;
-  if(n % 3 == 0) {
-    subs = n / 3;
-  } else { // both n % 3 == 1 and n % 3 == 2 shows the same result
-    subs = (n / 3) + 1;
-  }
-  return n - subs;
+long long countNumbers(int n)
+{
+    if (n == 0)
+        return 0;
+    int divisibles;
+    if (n % 3 == 0)
+    {
+        divisibles = n / 3;
+    }
+    else
+    {
+        divisibles = (n / 3) + 1;
+    }
+    return n - divisibles;
 }
 ```
 We solve this problem in O(1) right now. So as we will be given **A** and **B** and we need to find how many numbers from these range are divisible by 3 we simply do this.
