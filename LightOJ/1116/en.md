@@ -1,12 +1,20 @@
 # LOJ 1116 - Ekka Dokka #
 ---
+Ekka and his friend Dokka decided to buy a cake. They both love cakes and that's why they want to share the cake after buying it. As the name suggested that Ekka is very fond of odd numbers and Dokka is very fond of even numbers, they want to divide the cake such that Ekka gets a share of __N__ square centimeters and Dokka gets a share of __M__ square centimeters where __N is odd and M is even. Both N and M are positive integers.__
+
+They want to divide the cake such that `N * M = W`, where W is the dashing factor set by them. Now you know their dashing factor, you have to find whether they can buy the desired cake or not.
+
+### Input ###
 
 Input starts with an integer _T (≤ 10000)_, denoting the number of test cases.
 
 Each case contains an integer _W (2 ≤ W < 2<sup>63</sup>)_. And W will not be a power of 2.
 
-### Solution ###
-For each case, print the case number first. After that print `Impossible` if they can't buy their desired cake. If they can buy such a cake, you have to print `N` and `M`. If there are multiple solutions, then print the result where **M is as small as possible**.
+### Output ###
+
+For each case, print the case number first. After that print `Impossible` if they can't buy their desired cake. If they can buy such a cake, you have to print `N` and `M`. __If there are multiple solutions, then print the result where M is as small as possible__
+
+## Solution ##
 
 This is just a simple implementation problem. First we have to determine wether `W` is `even` or `odd` simply by checking `W % 2 = 0 or not`. If `W is odd`, we already realize that it is `Impossible` for such `N` and `M` to exist. But when it is not, there can be both single or multiple solutions such that `N * M = W`. For example: if `W = 10`, the only solution is `N = 5` and `M = 2`. But in case of `W = 12`, `(N,M) = {(6,2),(3,4)}`. Now there are 2 conditions:
 
