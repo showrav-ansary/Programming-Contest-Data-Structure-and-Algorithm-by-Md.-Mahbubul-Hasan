@@ -1,7 +1,7 @@
 # LOJ 1022 - Circle in Square #
 ---
 A circle is placed perfectly into a square. The term perfectly placed means that each side of the square is touched by the circle, but the circle doesn't have any overlapping part with the square. See the picture below.
-<p align="center"><img src="problem-1022"></p>
+<p align="center"><img src="problem-1022.png"></p>
 Now you are given the radius of the circle. You have to find the area of the shaded region (blue part). Assume that pi = 2 * acos (0.0) (acos means cos inverse).
 
 ### Input ###
