@@ -13,8 +13,7 @@ Each case starts with a line containing an integer n (1 ≤ n ≤ 100). Each of 
 For each case, print the case number and volume of their intersection.
 
 ## Solution ## 
-
-<img style="float: centre;" src="1211.png"> 
+<p align="center"><img src="1211.png"></p>
 We know that the `Volume of a Cube = Height * Width * Length`. For any _P -axis_, we can find out the _length_ of __common part__ simply by comparing which p<sub>2</sub> is near to __0__ and which p<sub>1</sub> is the most furthest from __0__. In other words, we need the __highest__ possible value among the inputs for `p1` and the __lowest__ possible value among the inputs for`p2` for any _P-axis_. And __length__ of the common part here will be __p<sub>2</sub> - p<sub>1</sub>__. Note that, we are __not__ going to take the __absolute value__ because there may be a scenario where there is __no common part__ at all and in such case _negative_ value for __any single axis__ will indicate that it is `impossible`, or simply `Volume = 0`. 
 
 Example of a valid case : from the graph, in X-axis, `Bx1` is the further from 0 than `Ax1` & `Ax2` is nearer to 0 than `Bx2`. Thus, `common length in X-axis = Ax2 - Bx1`.
