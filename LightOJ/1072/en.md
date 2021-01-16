@@ -4,7 +4,7 @@ George B. wants to be more than just a good American. He wants to make his daddy
 
 But sneaky as he is, he wants a special revolver that will allow him to shoot more often than just the usual six times. This way he can fool and kill the enemy easily (at least that's what he thinks, and that's the best he can think). George has kidnapped . . . uh, I mean . . ."invited" you and will only let you go if you help him with the math. The piece of the revolver that contains the bullets looks like this (examples for 6 and 17 bullets):
 
-<p align="center"><img src="problem1072.png" height="300"></p>
+<p align="center"><img src="problem1072.png"></p>
 
 There is a large circle with radius R and n little circles each having radius r, are placed inside on the border of the large circle. George wants his bullets to be as large as possible, so there should be no space between the circles. George will decide how large the whole revolver will be and how many bullets it shall contain. Your job is, given R and n, to compute r. You have decided to help, because you know that he can't make a revolver even if you help him with the math.
 
