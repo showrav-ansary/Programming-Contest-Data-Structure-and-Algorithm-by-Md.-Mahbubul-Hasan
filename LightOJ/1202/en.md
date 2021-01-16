@@ -1,6 +1,6 @@
 # LOJ 1202 - Bishops #
 ---
-<img src = "1203pr.gif" width="200"></img>
+<p align="center"><img src = "1203pr.gif"></img></p>
 
 There is an infinite chessboard. Two bishops are there. (Bishop means the chess piece that moves diagonally).
 
