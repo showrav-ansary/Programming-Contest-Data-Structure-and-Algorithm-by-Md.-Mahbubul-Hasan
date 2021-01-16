@@ -1,6 +1,6 @@
 # Programming Contest: Data Structure & Algorithm by Md. MahbubulHasan (June, 2016) #
 ---
-![Cover](Cover.png)
+<p align="center"><img src="Cover.png"></p>
 
 
 This repo contains solutions to the problems and exercises provided in __প্রোগ্রামিং কন্টেস্ট : ডেটা স্ট্রাকচার ও অ্যালগরিদম__ by __মোঃ মাহবুবুল হাসান__ (2016). You are highly discouraged to look through the solutions without trying out a problem by yourself first.
