@@ -18,7 +18,7 @@ For each case, print the case number and the volume of the juice in the glass. _
 
 ## Solution
 
-<p align = "center"><img src="1216.png" height ="450" ></p>
+<p align = "center"><img src="1216.png" height ="300" ></p>
 
 To solve it, me must know how to calculate the volume of a [Conical Frustum](https://en.wikipedia.org/wiki/Frustum "Conical Frustum").
 
