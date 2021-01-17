@@ -18,9 +18,9 @@ For each case, print the case number and the volume of the juice in the glass. _
 
 ## Solution
 
-<p align = "center"><img src="1216.png"></p>
+<p align = "center"><img src="1216.png" height ="450" ></p>
 
-To solve it, me must know how to calculate the volume of a [conical](https://en.wikipedia.org/wiki/Frustum "Conical Frustum").
+To solve it, me must know how to calculate the volume of a [Conical Frustum](https://en.wikipedia.org/wiki/Frustum "Conical Frustum").
 
 The `volume of a conical frustum, V = (π/3) * height * (radius1² + radius2² + (radius1 * radius2))`. So, if we know the 2 values of the __radii__, we can calculate __volume of the juice__. The only thing we need to figure out is, what is `r3`, the `radius` of glass at point `p`. Since, already `r2` and `r1` is given, we can find out the value of `r3` by doing some __tri-gonometric__ calculations.
 
