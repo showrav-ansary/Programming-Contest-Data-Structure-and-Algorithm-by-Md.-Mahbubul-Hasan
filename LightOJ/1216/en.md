@@ -26,11 +26,11 @@ The `volume of a conical frustum, V = (π/3) * height * (radius1² + radius2² +
 
 In the figure:
 ```
-In triangle EGC, 
+In △EGC, 
     tan(α) = EG/EC
            = (r1-r2)/h ...(i)
 
-In triangle MNC,
+In △MNC,
     tan(α) = MN/MC
            = (r3-r2)/p
     => r3 - r2 = p*tan(α)
