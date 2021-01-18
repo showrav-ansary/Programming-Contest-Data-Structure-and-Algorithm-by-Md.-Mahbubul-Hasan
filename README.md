@@ -9,4 +9,5 @@ You are requested to create an `issue` if you find any solution not well explain
 
 You are requested to create an `issue` first if you want to add any solution. You are more than welcome to create a `Pull request` if you want to add solutions of your own or want to add a new paradigm to any already existing solution. It is requested that you explain a solution as vividly as possible, as detailed as possible. You can write down pseudo code too or solution in any of your preferred language.
 
+---
 If you have any queries or want to get in touch with me, you can open a `Discussion` or simply `mail` me at `showrav.ansary.bd@gmail.com` or give me a knock at <a href="https://www.linkedin.com/in/showrav-ansary/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>. 
