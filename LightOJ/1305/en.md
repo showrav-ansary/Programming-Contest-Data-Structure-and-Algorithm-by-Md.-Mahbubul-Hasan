@@ -1,5 +1,4 @@
-# LOJ 1305 - 
----
+# LOJ 1305 - Area of a Parallelogram
 A parallelogram is a quadrilateral with two pairs of parallel sides. See the picture below:
 
 <p align = "center"><img src="1305problem"></p>
@@ -22,7 +21,7 @@ For each case, print the case number and three integers where the first two shou
 
 We know the area of a __Parallelogram__, `A = base * height`. 
 
-We must keep in mind that even though __AB || X - Axis || CD__ in the given example of the question, it might not be the true for all __test cases__ since it is not mentioned to be true for each case. And thus, we will use <img src="https://render.githubusercontent.com/render/math?math d = \sqrt {\left( {x_1 - x_2 } \right)^2 + \left( {y_1 - y_2 } \right)^2 }"> formula to find it.
+We must keep in mind that even though __AB || X - Axis || CD__ in the given example of the question, it might not be the true for all __test cases__ since it is not mentioned to be true for each case. And thus, we will use <img src="CodeCogsEqn(1).gif"> formula to find it.
 
 D<sub>y</sub>We can easily find out the `height` and as well the `x-coordinate` by doing some simple calculation.
 
