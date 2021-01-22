@@ -7,13 +7,26 @@ A parallelogram is a quadrilateral with two pairs of parallel sides. See the pic
 Now you are given the co ordinates of __A__, __B__ and __C__, you have to find the coordinates of __D__ and the area of the parallelogram. The orientation of __ABCD__ should be same as in the picture.
 
 
-## Input
+### Input
 
 Input starts with an integer _T (≤ 1000)_, denoting the number of test cases.
 
 Each case starts with a line containing six integers __A<sub>x</sub>, A<sub>y</sub>, B<sub>x</sub>, B<sub>y</sub>, C<sub>x</sub>, C<sub>y</sub>__ where __(A<sub>x</sub>, A<sub>y</sub>)__ denotes the coordinate of __A__, __(B<sub>x</sub>, B<sub>y</sub>)__ denotes the coordinate of __B__ and __(C<sub>x</sub>, C<sub>y</sub>)__ denotes the coordinate of __C__. Value of any coordinate lies in the range __[-1000, 1000]__. And you can assume that __A__, __B__ and __C__ will not be collinear.
 
 
-## Output
+### Output
 
 For each case, print the case number and three integers where the first two should be the coordinate of __D__ and the third one should be the area of the parallelogram.
+
+## Solution
+
+We know the area of a __Parallelogram__, `A = base * height`. 
+
+We must keep in mind that even though __AB || X - Axis || CD__ in the given example of the question, it might not be the true for all __test cases__ since it is not mentioned to be true for each case. And thus, we will use <img src="https://render.githubusercontent.com/render/math?math d = \sqrt {\left( {x_1 - x_2 } \right)^2 + \left( {y_1 - y_2 } \right)^2 }"> formula to find it.
+
+D<sub>y</sub>We can easily find out the `height` and as well the `x-coordinate` by doing some simple calculation.
+
+To find out the __D<sub>x</sub>:
+```
+
+```
