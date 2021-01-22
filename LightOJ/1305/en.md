@@ -21,7 +21,7 @@ For each case, print the case number and three integers where the first two shou
 
 We know the area of a __Parallelogram__, `A = base * height`. 
 
-We must keep in mind that even though __AB || X - Axis || CD__ in the given example of the question, it might not be the true for all __test cases__ since it is not mentioned to be true for each case. And thus, we will use <img src="CodeCogsEqn(1).gif"> formula to find it.
+We must keep in mind that even though __AB || X - Axis || CD__ in the given example of the question, it might not be the true for all __test cases__ since it is not mentioned to be true for each case. And thus, we will use  formula to find it.
 
 D<sub>y</sub>We can easily find out the `height` and as well the `x-coordinate` by doing some simple calculation.
 
