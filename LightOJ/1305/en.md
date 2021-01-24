@@ -19,17 +19,46 @@ For each case, print the case number and three integers where the first two shou
 
 ## Solution
 
-<p align = "center"><img src="1305.png" height ="350"></p>
+Since, it's a parallelogram, 
+```
+    AB = CD
+=>  Bx - Ax = Cx - Dx
+=>  Dx = Ax + Cx - Bx
+```
+Similarly, __D<sub>y</sub> = A<sub>y</sub> + C<sub>y</sub> - B<sub>y</sub>__.
+
 
 We know the area of a __Parallelogram__, 
 
 <p align = "center"><img src="Formula.png"></p>
 
-We must keep in mind that even though __AB || X - Axis || CD__ in the given example of the question, it might not be the true for all __test cases__ since it is not mentioned to be true for each case. And thus, we will use __d = (A<sub>x</sub> - B<sub>x</sub>)<sup>2</sup> + (A<sub>y</sub> - B<sub>y</sub>)<sup>2</sup>__ and find out the __coordinates__ from there.
 
-D<sub>y</sub>We can easily find out the `height` and as well the `x-coordinate` by doing some simple calculation.
+__A = 1/2 * ((A<sub>x</sub>*B<sub>y</sub>)+(B<sub>x</sub>*C<sub>y</sub>)+(C<sub>x</sub>*D<sub>y</sub>)+(D<sub>x</sub>*A<sub>y</sub>))-((A<sub>y</sub>*B<sub>x</sub>)+(B<sub>y</sub>*C<sub>x</sub>)+(C<sub>y</sub>*D<sub>x</sub>)+(D<sub>y</sub>*A<sub>x</sub>))__
 
-To find out the __D<sub>x</sub>:
-```
+We have to multiply `A = A -1` in case `A` comes in negative.
 
+If we now just simply plugin the values, we have all the answer now.
+
+The above implementation is `accepted`.
+
+## Solution in C
+```c
+#include <stdio.h>
+
+int main()
+{
+    int t, ax, ay, bx, by, cx, cy, dx, dy, a;
+    scanf("%d", &t);
+    for (int i = 1; i <= t; i++)
+    {
+        scanf("%d %d %d %d %d %d", &ax, &ay, &bx, &by, &cx, &cy);
+        dx = ax + cx - bx;
+        dy = ay + cy - by;
+        a = 0.5 * (((ax * by) + (bx * cy) + (cx * dy) + (dx * ay)) - ((ay * bx) + (by * cx) + (cy * dx) + (dy * ax)));
+        if (a < 0)
+            a *= -1;
+        printf("Case %d: %d %d %d\n", i, dx, dy, a);
+    }
+    return 0;
+}
 ```
