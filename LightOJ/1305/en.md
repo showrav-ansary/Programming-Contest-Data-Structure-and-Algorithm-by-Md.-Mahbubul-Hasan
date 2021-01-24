@@ -19,7 +19,11 @@ For each case, print the case number and three integers where the first two shou
 
 ## Solution
 
-We know the area of a __Parallelogram__, `A = base * height`. 
+<p align = "center"><img src="1305.png"></p>
+
+We know the area of a __Parallelogram__, 
+
+<p align = "center"><img src="Formula.png"></p>
 
 We must keep in mind that even though __AB || X - Axis || CD__ in the given example of the question, it might not be the true for all __test cases__ since it is not mentioned to be true for each case. And thus, we will use __d = (A<sub>x</sub> - B<sub>x</sub>)<sup>2</sup> + (A<sub>y</sub> - B<sub>y</sub>)<sup>2</sup>__ and find out the __coordinates__ from there.
 
