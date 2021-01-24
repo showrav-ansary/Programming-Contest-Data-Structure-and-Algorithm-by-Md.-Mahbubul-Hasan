@@ -19,7 +19,7 @@ For each case, print the case number and three integers where the first two shou
 
 ## Solution
 
-<p align = "center" height="400"><img src="1305.png"></p>
+<p align = "center"><img src="1305.png" height ="350"></p>
 
 We know the area of a __Parallelogram__, 
 
