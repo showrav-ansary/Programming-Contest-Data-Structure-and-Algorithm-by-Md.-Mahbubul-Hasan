@@ -34,7 +34,7 @@ S is the arc length when θ = S/r
 So, S = θ * r
 ```
 
-We can calculate the radius of the circle simply by taking the length of any _point of a circle_ to its _center_, __radius = √((A<sub>x</sub> - O<sub>x</sub>)² + (B<sub>y</sub> - B<sub>y</sub>)²)__.
+We can calculate the radius of the circle simply by taking the _distanc_ of any _point of a circle_ to its _center_, __distance = √((P1<sub>x</sub> - P2<sub>x</sub>)² + (P1<sub>y</sub> - P2<sub>y</sub>)²)__.
 
 Now to calculate the _angle_ we can use the _cosine rule_ of triangles,
 ```
@@ -43,7 +43,7 @@ AB (Straight line, not the arc length) = √(OA²+OB²-2*OA*OB*cosθ)
 => cosθ = (OA²+OB²-AB²)/2*OA*OB
 => θ = arccos ((OA²+OB²-AB²)/2*OA*OB)
 ```
-Now we have the necessary values and we can plug into the formula.
+We again use the _distance_ formula for each line and now we have the necessary values that we can plug into the _arc length_ formula.
 
 The above implementation is `accepted`.
 
