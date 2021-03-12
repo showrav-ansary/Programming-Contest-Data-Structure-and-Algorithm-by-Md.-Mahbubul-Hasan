@@ -1,9 +1,28 @@
 # LOJ 1002 - Country Roads 
 ---
-Tags : graph, single source shortest path,
 
+I am going to my home. There are many cities and many bi-directional roads between them. The cities are numbered from 0 to n-1 and each road has a cost. There are m roads. You are given the number of my city t where I belong. Now from each city you have to find the minimum cost to go to my city. The cost is defined by the cost of the maximum road you have used to go to my city.
 
-We will be given information of an area map (_undirected graph / bi-directional graph_) through the number of cities (_nodes_),number of roads (_edges_) in total and the cost (_weight_) for each _pair_ of linked cities via the road. And we will also be given __t__ the home town (_the staring node_) and we have to print out the minimum cost to reach this town from other cities. 
+![graph](1002problem.png "Area Map")
+
+For example, in the above picture, if we want to go from 0 to 4, then we can choose
+
+    0 - 1 - 4 which costs 8, as 8 (1 - 4) is the maximum road we used
+    0 - 2 - 4 which costs 9, as 9 (0 - 2) is the maximum road we used
+    0 - 3 - 4 which costs 7, as 7 (3 - 4) is the maximum road we used
+
+So, our result is 7, as we can use 0 - 3 - 4.
+
+### Input
+
+Input starts with an integer _T (≤ 20)_, denoting the number of test cases.
+
+Each case starts with a blank line and two integers _n (1 ≤ n ≤ 500)_ and _m (0 ≤ m ≤ 16000)_. The next _m_ lines, each will contain three integers _u, v, w (0 ≤ u, v < n, u ≠ v, 1 ≤ w ≤ 20000)_ indicating that there is a road between _u_ and _v_ with cost _w_. Then there will be a single integer _t (0 ≤ t < n)_. There can be multiple roads between two cities.
+
+### Output
+
+For each case, print the case number first. Then for all the cities (from 0 to n-1) you have to print the cost. If there is no such path, print Impossible.
+
 
 ### Helpful Resources
 
@@ -11,12 +30,14 @@ We will be given information of an area map (_undirected graph / bi-directional 
 
 * [Dijkstra's algorithm](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm "Dijkstra's algorithm - WikiPedia")
 
+* [Dijkstra’s shortest path algorithm - GeeksForGeeks](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/ "Dijkstra’s shortest path algorithm | Greedy Algo-7")
+
 * [Abdul Bari's Explanation of Dijsktra (Video)](https://www.youtube.com/watch?v=XB4MIexjvY0 "Abdul Bari's Explanation of Dijsktra - YouTube")
 
 
 ## Solution
 
-At first we will simply create a _graph_ structure for the _Area Map_ in any preferred method (adj. matrix/ linked list). The problem statement has confirmed : (1) there shall be no negative cost for the roads and (2) the graph is a _bi-directional_/_undirected graph_. We can apply _Dijsktra's Algorihtm_ or its derivative or any similar. While the problem statement has stated the there are __multiple source nodes__ and actually the __destination node__ is the __home town__ but for ease of implementation we will consider the __home town__ as the __source node__ and the _other cities_ as the __destination nodes__, meaning it's not about finding the shortest path for _traversing all the cities in one go in one single optimal path_ rather it's about finding _multiple optimal path for each individual city by traversing multiple path_. Thus instead of being __greedy__, we go full __brute force__ by not leaving any route for a single _city_ to _home town_ untried. More clearly, we won't be marking any _city_ for being traversed previously. We must implement in such way that we have to keep the _distance_ _array_/_list_ for keeping record of the _maximum road weight_ encountered while traversing through a specific route for a specific destination instead of _summing_ each _weight_ encountered and taking the _minimum sum_. 
+At first we will simply create a _graph_ structure for the _Area Map_ in any preferred method (adj. matrix/ linked list). The problem statement has confirmed : (1) there shall be no negative cost for the roads and (2) the graph is a _bi-directional_/_undirected graph_. We can apply _Dijsktra's Algorihtm_ or its derivative or any similar. The problem statement has stated that there are __multiple source nodes__, the other cities expect home town, and actually the __destination node__ is the __home town__.But for ease of implementation we will consider the __home town__ as the __source node__ and the _other cities_ as the __destination nodes__, meaning it's not about finding the shortest path for _traversing all the cities in one go in one single optimal path_ rather it's about finding _multiple optimal path for each individual city by traversing multiple path_. Thus instead of being __greedy__, we go full __brute force__ by not leaving any route for a single _city_ to _home town_ untried. More clearly, we won't be marking any _city_ for being traversed previously. We must implement in such way that we have to keep the _distance_ _array_/_list_ for keeping record of the _minimum of the highest road cost (weight)_ encountered while traversing through a specific route for a specific destination instead of _summing_ each _weight_ encountered and taking the _minimum sum_. 
  `optimal path of a city to the home town = path that has the minimum highest weighted road among all possible routing`. (Look through the code for better understanding.)
 
 __Caution__ : Remember to use fast I/O for your preferred language as per the suggestion from the problem statement and find out what may disrupt them to avoid it. 
