@@ -1,28 +1,9 @@
-# LOJ 1002 - Country Roads 
+# LOJ 1002 - Country Roads
 ---
+Tags : graph, single source shortest path,
 
-I am going to my home. There are many cities and many bi-directional roads between them. The cities are numbered from 0 to n-1 and each road has a cost. There are m roads. You are given the number of my city t where I belong. Now from each city you have to find the minimum cost to go to my city. The cost is defined by the cost of the maximum road you have used to go to my city.
 
-![graph](1002problem.png "Area Map")
-
-For example, in the above picture, if we want to go from 0 to 4, then we can choose
-
-    0 - 1 - 4 which costs 8, as 8 (1 - 4) is the maximum road we used
-    0 - 2 - 4 which costs 9, as 9 (0 - 2) is the maximum road we used
-    0 - 3 - 4 which costs 7, as 7 (3 - 4) is the maximum road we used
-
-So, our result is 7, as we can use 0 - 3 - 4.
-
-### Input
-
-Input starts with an integer _T (≤ 20)_, denoting the number of test cases.
-
-Each case starts with a blank line and two integers _n (1 ≤ n ≤ 500)_ and _m (0 ≤ m ≤ 16000)_. The next _m_ lines, each will contain three integers _u, v, w (0 ≤ u, v < n, u ≠ v, 1 ≤ w ≤ 20000)_ indicating that there is a road between _u_ and _v_ with cost _w_. Then there will be a single integer _t (0 ≤ t < n)_. There can be multiple roads between two cities.
-
-### Output
-
-For each case, print the case number first. Then for all the cities (from 0 to n-1) you have to print the cost. If there is no such path, print Impossible.
-
+We will be given information of an area map (_undirected graph / bi-directional graph_) through the number of cities (_nodes_),number of roads (_edges_) in total and the cost (_weight_) for each _pair_ of linked cities via the road. And we will also be given __t__ the home town (_the staring node_) and we have to print out the minimum cost to reach this town from other cities.
 
 ### Helpful Resources
 
@@ -37,14 +18,55 @@ For each case, print the case number first. Then for all the cities (from 0 to n
 
 ## Solution
 
-At first we will simply create a _graph_ structure for the _Area Map_ in any preferred method (adj. matrix/ linked list). The problem statement has confirmed : (1) there shall be no negative cost for the roads and (2) the graph is a _bi-directional_/_undirected graph_. We can apply _Dijsktra's Algorihtm_ or its derivative or any similar. The problem statement has stated that there are __multiple source nodes__, the other cities expect home town, and actually the __destination node__ is the __home town__.But for ease of implementation we will consider the __home town__ as the __source node__ and the _other cities_ as the __destination nodes__, meaning it's not about finding the shortest path for _traversing all the cities in one go in one single optimal path_ rather it's about finding _multiple optimal path for each individual city by traversing multiple path_. Thus instead of being __greedy__, we go full __brute force__ by not leaving any route for a single _city_ to _home town_ untried. More clearly, we won't be marking any _city_ for being traversed previously. We must implement in such way that we have to keep the _distance_ _array_/_list_ for keeping record of the _minimum of the highest road cost (weight)_ encountered while traversing through a specific route for a specific destination instead of _summing_ each _weight_ encountered and taking the _minimum sum_. 
- `optimal path of a city to the home town = path that has the minimum highest weighted road among all possible routing`. (Look through the code for better understanding.)
+At first we will simply create a _graph_ structure for the _Area Map_ in any preferred method (adj. matrix/ linked list). The problem statement has confirmed : (1) there shall be no negative cost for the roads and (2) the _graph_ is a _bi-directional_/_undirected graph_. We can apply _Dijsktra's Algorihtm_ or its derivative or any similar. But we must keep in mind that we are finding _many dedicated optimal paths(one path per one city), not one optimal path to traverse all the cities in 1 go_. For each __individual city's optimal path__, we take the _minimum_ from _all the  path's costs_. Here, a __path's cost = maximum weighted road encountered__ which we will be saving in a separate _array/list_.
 
-__Caution__ : Remember to use fast I/O for your preferred language as per the suggestion from the problem statement and find out what may disrupt them to avoid it. 
+
+We at first __update__ the __cost__ if the two cities have _directly_ connected edges among them, and in that case we will only keep the _lowest possible weight_. It's a _duplicate_ we get rid off while taking inputs for _edges_. Let's look at the `Case 2`'s inputs':
+```
+5 4
+0 1 5
+0 1 4
+2 1 3
+3 4 7
+1
+```
+In this case, `0 1 5` and `0 1 4` are inputs for `0 -- 1` edge along with the weight/cost. We will `update` while taking `inputs` and update from `cost[0,1] = 5` to `cost[0,1] = 4` as it is minimum among those two __directly connected edges__.
+
+Now we need to traverse and update costs. We will go full __brute force__ by not leaving any route for a _home town_ to _another city_ untried. For example:
+
+![graph](graph.png "Example")
+
+__All the possible paths for `1 to 2`__:
+
+| Route      | Max Road Cost | Update      |
+| :---        |    :----   |  :--- |
+| 1 -- 0 -- 3 -- 4 -- 2      | 8       | From `infinity` to `8`   |
+| 1 -- 4 -- 3 -- 0 -- 2   | 9        | No      |
+| 1 -- 0 -- 2   | 9        | No      |
+| 1 -- 4 -- 2   | 7       | From `8` to `7`     |
+
+This is how we are traversing, leaving no path untried. We just update the distance array/list for `[1,2] = 7` as it is the _minimum_. We are only updating the cost of the _destination_. We repeat this process for from _home town_ to all the other cities and ultimately get the distance array/list.
+
+__What would happen if we had marked to avoid repetition so that we find _just one single optimal path to travel them all in 1 go_?__
+
+| Current City      | Visited |  Next City (City with lower cost) | Update | Highest Road Cost |
+| :--- | :--- | :--- | :---| :---|
+| 1 | {} | 0  | [1,0] = 2| 2|
+| 0 |{0}|   3|[1,3] = 3 | 3|
+|3| {0,3}| 4 | [1,4] = 8|8|
+|4|{0,3,4}|2| [1,2] = 8| 8|
+|2|{0,3,4,2}|All City Traversed| N/A | 8|
+
+
+![graph](graph2.png "Example 2")
+
+We have constructed a single optimal path, but the only thing wrong here is `[1,2] = 8` which is the wrong answer. Thus we are not to use _any algorithm that_ re-maps the whole area or does not check all possible routes in a _brute force_ manner.
+
+__Caution__ : Remember to use fast I/O for your preferred language as per the suggestion from the problem statement and find out what may disrupt them to avoid it.
 
 The above implementation is `accepted`.
 
-## Solution in C++ 
+## Solution in C++
 ```cpp
 
 #include <bits/stdc++.h>
@@ -60,10 +82,10 @@ int main()
     int testCases, numberOfCities, numberOfRoads,
         sourceCity, destinationCity, roadCost, homeTown, maxCostFound;
     /*
-    sourceCity = edge's first endpoint 
-    destinationCity = edge's second endpoint 
+    sourceCity = edge's first endpoint
+    destinationCity = edge's second endpoint
     homeTown = source node from where we traverse
-          
+
     */
 
     cin >> testCases;
@@ -72,7 +94,7 @@ int main()
     {
         cin >> numberOfCities >> numberOfRoads;
 
-        vector<int> areaMap[numberOfCities];      //actual graph 
+        vector<int> areaMap[numberOfCities];      //actual graph
         int distanceFromHomeTown[numberOfCities]; //distance output array
         int cost[numberOfCities][numberOfCities]; //road costs
 
@@ -102,24 +124,24 @@ int main()
 
         queue<int> cityQueue; //making a queue to traverse through each of the city
 
-        cityQueue.push(homeTown); //pushing the home town as our start point or source node 
+        cityQueue.push(homeTown); //pushing the home town as our start point or source node
 
         distanceFromHomeTown[homeTown] = 0;
 
         while (!cityQueue.empty())
         {
 
-            
+
             int startingCity = cityQueue.front();
 
             cityQueue.pop(); //taking it out since it will be traversed now
 
             //Checking the other cities that can be reached via startingCity
 
-            /* 
-            don't sum previous road costs.
-            as per problem requirement, we only update distance by maximum weight encountered.
-            don't check for duplicate enqueueing as we may find a better path that has less max value.
+            /*
+            don't sum previous road costs along the way and update.  
+            as per problem requirement, we only update the `distance array` by `maximum weight` encountered, not the `cost` array.
+            don't check for duplicate enqueue as we may find a better path that has lesser max value.
             we need to go full brute force leaving no path unchecked because of the problem requirements.
             */
 
@@ -131,7 +153,7 @@ int main()
                 if (distanceFromHomeTown[currentCity] > maxCostFound)
                 {
                     distanceFromHomeTown[currentCity] = maxCostFound;
-                    cityQueue.push(currentCity); 
+                    cityQueue.push(currentCity);
                 }
             }
         }
