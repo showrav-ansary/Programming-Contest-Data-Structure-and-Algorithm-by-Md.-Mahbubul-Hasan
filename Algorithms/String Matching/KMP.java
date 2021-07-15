@@ -51,6 +51,7 @@ public class KMP{
         }
     }
 
+    // Actual KMP matching
     private static void KMPMatcher(String text, String pattern){
         // Populate the prefixArray (pi-array)
         ComputePrefixArray(pattern);
