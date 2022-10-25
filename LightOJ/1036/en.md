@@ -81,7 +81,7 @@ left-right:
 
 {`>` is summed up with its value and the __IMMEDIATE__ previous block's value}
 
-Here, `((0,3) + (1,3) + (2,3))` [this is up->down, look at the image] = ULTIMATE CUMULATIVE SUM. Because while __solving sub-problem-1__, we made sure `(0,3) = (0,0) + (0,1) + (0,2) + (0,3)`, `(1,3) = (1,0) + (1,1) + (1,2) + (1,3)` and `(2,3) = (2,0) + (2,1) + (2,2) + (2,3)`, which was adding left->right. But we need `sum(each cumulated block)`, which is __actually__ from up->down of the cumulated left-right blocks. Basically, __(M<sub>0</sub>,<sub>j</sub> + M<sub>1</sub>,<sub>j</sub> + ... + M<sub>n</sub>,<sub>j</sub>)__ is applicable for left-right ULTIMATE CUMULATIVE SUM for up to __M<sub>j</sub>,<sub>n</sub>__ block.
+Here, `((0,3) + (1,3) + (2,3))` [this is up->down, look at the image] = ULTIMATE CUMULATIVE SUM. Because while __solving sub-problem-1__, we made sure `(0,3) = (0,0) + (0,1) + (0,2) + (0,3)`, `(1,3) = (1,0) + (1,1) + (1,2) + (1,3)` and `(2,3) = (2,0) + (2,1) + (2,2) + (2,3)`, which was adding left->right. But we need `sum(each cumulated block)`, which is __actually__ from up->down of the cumulated left-right blocks. Basically, __(M<sub>0</sub>,<sub>j</sub> + M<sub>1</sub>,<sub>j</sub> + ... + M<sub>n</sub>,<sub>j</sub>)__ is applicable for left-right ULTIMATE CUMULATIVE SUM for up to __M<sub>n</sub>,<sub>j</sub>__ block.
 
 up-down:
 
