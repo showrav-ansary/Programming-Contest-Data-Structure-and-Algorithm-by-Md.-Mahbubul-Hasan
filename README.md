@@ -5,8 +5,6 @@
 
 This repo contains solutions to the problems and exercises provided in __প্রোগ্রামিং কন্টেস্ট : ডেটা স্ট্রাকচার ও অ্যালগরিদম__ by __মোঃ মাহবুবুল হাসান__ (2016). You are highly discouraged to look through the solutions without trying out a problem by yourself first.
 
- 
- <img alt="Lines of code" src="https://img.shields.io/tokei/lines/github/showrav-ansary/Programming-Contest-Data-Structure-and-Algorithm-by-Md.-Mahbubul-Hasan?logo=github&logoColor=red&style=social">
 
 ## Guidelines for Contributor
 
@@ -24,9 +22,12 @@ Coding guidelines:
 * Do proper indentation.
 * Add comments so that people can relate to the explanations.
 * Follow the standards of your language.
-* If you are using a data structure specific to your language, mention the insertion/deletion/mutation/look up/prepend/append costs.
-* Include the code driver in the same file.
+* If you are using a data structure specific to your language, mention the `insertion`/`deletion`/`mutation`/`look up`/`prepend`/`append` costs.
+* Include the driver code in the same file.
 
+## Disclaimer
+
+[LightOJ](https://lightoj.com/home), [Codeforces](https://codeforces.com/), [Timus](https://acm.timus.ru/), [UVa](https://onlinejudge.org/), [Codechef](https://www.codechef.com/) and other online judges have their own copyright and agreements. Go through them if you want to copy any content directly from them.
 
 ---
 If you have any queries or want to get in touch with me, you can open a `Discussion` or simply `mail` me at `showrav.ansary.bd@gmail.com` or give me a knock at <a href="https://www.linkedin.com/in/showrav-ansary/" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>.
